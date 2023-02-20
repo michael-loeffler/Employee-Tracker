@@ -12,9 +12,13 @@ VALUES ("Software Engineer", 120000, 1),
        ("Chief Finance Officer", 250000, 2),
        ("Payroll Specialist", 80000, 3),
        ("Onboarding Specialist", 80000, 3),
-       ("Director of Human Resources", 130000, 4),
+       ("Director of Human Resources", 130000, 3),
        ("Lawyer", 180000, 4),
        ("General Counsel", 250000, 4),
        ("Sales Associate", 80000, 5),
        ("Sales Manager", 130000, 5);
+
+INSERT INTO employees (first_name, last_name, role_id)
+VALUES ("Michael", "Loeffler", 1),
+       ("Boss", "Person", 2);
        

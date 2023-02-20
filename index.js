@@ -21,33 +21,6 @@ const actionOptions = [
     }
 ];
 
-const departmentQuestions = [
-    {
-        type: 'input',
-        message: `What is the name of the department?`,
-        name: 'department_name',
-    }
-];
-
-const roleQuestions = [
-    {
-        type: 'input',
-        message: `What is the name of the role?`,
-        name: 'title',
-    },
-    {
-        type: 'input',
-        message: `What is the salary of the role?`,
-        name: 'salary',
-    },
-    // {
-    //     type: 'list',
-    //     message: `Which department does the role belong to?`,
-    //     name: 'department_id',
-    //     choices: []
-    // }
-];
-
 const employeeQuestions = [
     {
         type: 'input',
@@ -105,9 +78,9 @@ function displayMenuOptions(questions) {
             } else if (data.action === `View all employees`) {
                 query.displayEmployees();
             } else if (data.action === `Add a department`) {
-                
+                query.addDepartment();
             } else if (data.action === `Add a role`) {
-                
+                query.addRole();
             } else if (data.action === `Add an employee`) {
                 
             } else if (data.action === `Update an employee's role`) {

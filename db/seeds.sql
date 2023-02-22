@@ -19,6 +19,7 @@ VALUES ("Software Engineer", 120000, 1),
        ("Sales Manager", 130000, 5);
 
 INSERT INTO employees (first_name, last_name, role_id)
-VALUES ("Michael", "Loeffler", 1),
-       ("Boss", "Person", 2);
+VALUES ("Boss", "Person", 2);
        
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES ("Michael", "Loeffler", 1, 1);

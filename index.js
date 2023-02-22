@@ -21,30 +21,7 @@ const actionOptions = [
     }
 ];
 
-const employeeQuestions = [
-    {
-        type: 'input',
-        message: `What is the employee's first name?`,
-        name: 'first_name',
-    },
-    {
-        type: 'input',
-        message: `What is the employee's last name?`,
-        name: 'last_name',
-    },
-    // {
-    //     type: 'list',
-    //     message: `What is the employee's role?`,
-    //     name: 'role_id',
-    //     choices: []
-    // },
-    // {
-    //     type: 'list',
-    //     message: `Who is the employee's manager?`,
-    //     name: 'manager_id',
-    //     choices: []
-    // }
-];
+
 
 const updateQuestions = [
     // {
@@ -82,7 +59,7 @@ function displayMenuOptions(questions) {
             } else if (data.action === `Add a role`) {
                 query.addRole();
             } else if (data.action === `Add an employee`) {
-                
+                query.addEmployee();
             } else if (data.action === `Update an employee's role`) {
                 
             }

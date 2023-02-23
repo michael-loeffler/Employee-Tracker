@@ -22,23 +22,6 @@ const actionOptions = [
     }
 ];
 
-
-
-const updateQuestions = [
-    // {
-    //     type: 'list',
-    //     message: `Which employee's role would you like to update?`,
-    //     name: 'employee_id',
-    //     choices: []
-    // },
-    // {
-    //     type: 'list',
-    //     message: `Which role would you like to assign to the selected employee?`,
-    //     name: 'role_id',
-    //     choices: []
-    // }
-]
-
 //-- FUNCTIONS --//
 //- Creates a function that initializes the app; it is called immediately when the app is ran and asks what action the user would like to take. -//
 function init() {
@@ -74,10 +57,5 @@ function displayMenuOptions(questions) {
             }
         })
 };
-
-// function viewDepartments() {
-//     query.displayDepartments();
-//     displayMenuOptions(actionOptions); DID NOT WORK
-// }
 
 init();

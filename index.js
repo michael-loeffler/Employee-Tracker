@@ -17,6 +17,7 @@ const actionOptions = [
             `Add a role`, 
             `Add an employee`, 
             `Update an employee's role`, 
+            `Quit Application`
         ],
     }
 ];
@@ -47,21 +48,29 @@ function init() {
 function displayMenuOptions(questions) {
     inquirer
         .prompt(questions)
-        .then((data) => {
+        .then(async (data) => {
             if (data.action === `View all departments`) {
-                query.displayDepartments();
+                await query.displayDepartments();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `View all roles`) {
-                query.displayRoles();
+                await query.displayRoles();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `View all employees`) {
-                query.displayEmployees();
+                await query.displayEmployees();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `Add a department`) {
-                query.addDepartment();
+                await query.addDepartment();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `Add a role`) {
-                query.addRole();
+                await query.addRole();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `Add an employee`) {
-                query.addEmployee();
+                await query.addEmployee();
+                displayMenuOptions(actionOptions);
             } else if (data.action === `Update an employee's role`) {
                 
+            } else {
+                process.exit(0);
             }
         })
 };

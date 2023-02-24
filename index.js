@@ -51,7 +51,8 @@ function displayMenuOptions(questions) {
                 await query.addEmployee();
                 displayMenuOptions(actionOptions);
             } else if (data.action === `Update an employee's role`) {
-                
+                await query.updateEmployeeRole();
+                displayMenuOptions(actionOptions);
             } else {
                 process.exit(0);
             }

@@ -41,7 +41,18 @@ Through working on this project, I have learned about MySQL and using JavaScript
    ```sh
    npm i
    ```
-4. Invoke the application in the command-line using the following command
+4. Create a .env file with the following information
+   ```sh
+   DB_NAME='company_db'
+   DB_USER='root'
+   DB_PASSWORD='your MySQL password here'
+   ```
+5. CD into the db folder, Open MySQL, and run the following commands 
+   ```sh
+   source schema.sql;
+   source seeds.sql;
+   ```
+6. Invoke the application in the command-line using the following command
    ```sh
    node index.js
    ```

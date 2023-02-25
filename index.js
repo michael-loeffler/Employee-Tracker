@@ -24,9 +24,6 @@ const actionOptions = [
 
 //-- FUNCTIONS --//
 //- Creates a function that initializes the app; it is called immediately when the app is ran and asks what action the user would like to take. -//
-function init() {
-    displayMenuOptions(actionOptions);
-};
 
 function displayMenuOptions(questions) {
     inquirer
@@ -59,4 +56,4 @@ function displayMenuOptions(questions) {
         })
 };
 
-init();
+displayMenuOptions(actionOptions);

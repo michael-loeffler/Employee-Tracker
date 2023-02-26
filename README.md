@@ -4,19 +4,19 @@
 
 ## Description
     
-The Employee Tracker is a command-line application that allows a user to view information about departments, roles, and personnel within their company stored in a MySQL database. Additionally, users are able to add to and update data within that database as new departments, roles, and employees are added to the company.  This application serves as a quick and user-friendly way for non-developers to access and edit data stored in the database. 
+The Employee Tracker is a command-line application that allows a user to view information about departments, roles, and personnel within their company stored in a MySQL database. Additionally, users are able to add to the database in the form of new departments, roles, and employees as they are added to the company.  This application serves as a quick and user-friendly way for non-developers to access and edit data stored in the database. 
 
-I was motivated to create this application because content management systems (CMS) exist at almost every company in every sector to allow employees without advanced MySQL knowledge to access and edit large or small amounts of database data. In order to fulfill their job responsibilities, employees often need to quickly run a report to access data and a CMS will allow them to do that. Additionally, building this application was interesting for me because I can already see the other ways I can tweak this tool for different scenarios/use-cases where I would need to access and display specific fields in a database for use within the logic of the application, as well as running queries to reformat data in user-friendly formats.
+I was motivated to create this application because content management systems (CMS) exist at almost every company in every sector to allow employees without advanced MySQL knowledge to access and edit large or small amounts of database data. In order to fulfill their job responsibilities, employees often need to quickly run a report to access the data they need and a CMS will allow them to do that. Additionally, building this application was interesting for me because I can already see the other ways I can tweak this tool for different scenarios/use-cases where I would need to access and display specific fields from a database for use within the logic of the application, as well as running queries to reformat data in user-friendly formats.
 
 Through working on this project, I have learned about MySQL and using JavaScript to query, access, display, and edit information stored in database tables so that users can learn from and use the data within MySQL without needing to be an expert. Some of the biggest points of learning include:
 
 * MySQL Databases and Tables
 * CRUD actions on databases and tables (Create, Read, Update, Delete)
-* Using createConnection to build a bridge between MySQL and Node
+* Using createConnection to build a bridge between MySQL and Node (as well as storing sensitive login information for this connection in a .env file)
 * Creating a Schema that meets the needs of the specific project with respect to data types, required fields (not null), primary keys, and foreign keys
-* Created a Seeds file to quickly add a larger amount of data to get a database started
-* Building and implementing prepared statements to run queries based on user input, while maintaining the security of your database from SQL injection attacks
-* Utilizing async/await and the .promise() function of MySQL2 to make my queries asynchronous in order to prevent them from all running at the same time and causing unexpected results
+* Created a Seeds file to quickly add a large amount of data to get a database started
+* Building and implementing prepared statements to run queries based on user input, while maintaining the security of the database from SQL injection attacks
+* Utilizing async/await and the .promise() function of MySQL2 to make queries asynchronous in order to prevent them from all running at the same time and causing unexpected results
 * Building a Class to organize all the query methods required to accomplish associated actions
 
 ## Table of Contents
@@ -47,19 +47,19 @@ Through working on this project, I have learned about MySQL and using JavaScript
    DB_USER='root'
    DB_PASSWORD='your MySQL password here'
    ```
-5. CD into the db folder, Open MySQL, and run the following commands 
+5. CD into the db folder, open MySQL, and run the following commands 
    ```sh
    source schema.sql;
    source seeds.sql;
    ```
-6. Invoke the application in the command-line using the following command
+6. Return to the main folder of the project and invoke the application in the command-line using the following command
    ```sh
    node index.js
    ```
     
 ## Usage
     
-The Employee Tracker functions as a command-line application. After following the installation instructions above, whenever users want to create an html file for a team profile webpage, they simply invoke the application using the command "node index.js". The application begins with an init() function that will run immediately when the application is invoked. The Inquirer package will prompt the user with questions to gather all pertinent information about the Manager of the team. Then it will ask the user if they would like to add an Engineer or Intern to the team, and ask questions accordingly to gather information about those employee types. It will continue this process until the user indicates that they are finished creating their team. At that time, the application will generate html code with all the data that was submitted to build a clean and functioning webpage. It will then write it to a new file and add it to the "dist" directory for use. The file that is created will be named "teamProfile.html".
+The Employee Tracker functions as a command-line application. After following the installation instructions above, whenever users want to view or edit company data stored in the database, they simply invoke the application using the command "node index.js". The index.js file contains only one function declaration, the displayMenuOptions function, which will run immediately when the application is invoked. The Inquirer package will prompt the user with the various action options available to them, and when one is selected, the associated method stored in the Query class will be called, followed by another call of the displayMenuOptions function to provide the user with an opportunity to perform another action. All query methods are stored in the Query class and imported as a module in order to keep the index.js file brief and organized. If the action selected by the user requires input, the Inquirer package will gather all pertinent information from the user for that action, and then asynchronous queries will use the information collected to perform the associated action in MySQL. This is done using prepared statements to secure the database against SQL injection attacks. Sometimes, the Inquirer questions need information stored in the database to populate options for a particular question. When this is the case, asynchronous queries are run before the Inquirer package in order to provide choices for a list inquiry. For actions that simply pull and display data from the database, the console.table package is used to display the data in a visually friendly format. All queries are called asynchronously to prevent multiple queries from running simultaneously. It was necessary to prevent them from running simultaneously because often queries relied on the results of a previous query in order to run properly. Finally, when they are ready to exit, the user can select the "Quit Application" menu option and the application is closed. 
 
 ### --- Video demonstration of application's functionality ---
 

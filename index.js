@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const Query = require('./lib/Query');
 const query = new Query();
 
-//-- INQUIRER PROMPTS, QUESTION ARRAYS FOR EACH ACTION AND 1 FOR ACTION OPTIONS --//
+//-- INQUIRER PROMPTS: QUESTION ARRAY OF ACTION OPTIONS --//
 const actionOptions = [
     {
         type: 'list',
@@ -23,8 +23,7 @@ const actionOptions = [
 ];
 
 //-- FUNCTIONS --//
-//- Creates a function that initializes the app; it is called immediately when the app is ran and asks what action the user would like to take. -//
-
+//- Creates a function which is called immediately when the app is ran and asks what action the user would like to take. Once selected, the associated function for that action is ran, and then this function is ran again to allow the user to select another action if they so choose -//
 function displayMenuOptions(questions) {
     inquirer
         .prompt(questions)
@@ -51,7 +50,7 @@ function displayMenuOptions(questions) {
                 await query.updateEmployeeRole();
                 displayMenuOptions(actionOptions);
             } else {
-                process.exit(0);
+                process.exit(0); // closes the app if the user selects "Quit Application" //
             }
         })
 };

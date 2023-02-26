@@ -19,7 +19,16 @@ VALUES ("Software Engineer", 120000, 1),
        ("Sales Manager", 130000, 5);
 
 INSERT INTO employees (first_name, last_name, role_id)
-VALUES ("Boss", "Person", 2);
+VALUES ("Tony", "Stark", 2),
+       ("Scrooge", "McDuck", 4),
+       ("Carla", "Coe", 7),
+       ("Grace", "Goe", 9),
+       ("Herbert", "Hoe", 11);
        
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
-VALUES ("Michael", "Loeffler", 1, 1);
+VALUES ("Michael", "Loeffler", 1, 1),
+       ("John", "Doe", 3, 2),
+       ("Donna", "Doe", 5, 3),
+       ("Frank", "Foe", 6, 3),
+       ("Marta", "Moe", 8, 4),
+       ("Norma", "Noe", 10, 5);

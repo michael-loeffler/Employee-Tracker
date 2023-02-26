@@ -63,7 +63,7 @@ The Employee Tracker functions as a command-line application. After following th
 
 ### --- Video demonstration of application's functionality ---
 
-Please review the [demonstration video](https://drive.google.com/file/d/1dSsi_oiSJlcqlLNsLiJ_bnjVmjV61LOx/view) to see how the app functions and experience the user perspective.
+Please review the [demonstration video](https://drive.google.com/file/d/1mgfDLoTw5uz2s_H8bSDM-OJbfhZ0wfSA/view) to see how the app functions and experience the user perspective.
     
 ## Credits
 
